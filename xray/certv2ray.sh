@@ -7,9 +7,9 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 
 cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 if [ "$cekray" = "XRAY" ]; then
-domainlama=`cat /etc/xray/domain`
+domain=`cat /etc/xray/domain`
 else
-domainlama=`cat /etc/v2ray/domain`
+domain=`cat /etc/v2ray/domain`
 fi
 
 clear
@@ -36,6 +36,7 @@ sleep 2
 echo -e "[ ${green}INFO${NC} ] Starting service $Cek " 
 sleep 2
 echo $domain > /etc/xray/domain
+echo $domain > /var/lib/SIJA
 systemctl restart $Cek
 systemctl restart nginx
 echo -e "[ ${green}INFO${NC} ] All finished... " 
