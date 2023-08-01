@@ -1,4 +1,9 @@
 #!/bin/bash
+MYIP=$(curl -sS ipv4.icanhazip.com)
+rm -rf menu-trgo
+rm -rf menu-trojan
+rm -rf menu-ssh
+rm -rf menu-backup
 cd /usr/bin
 # menu
 wget -O menu "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu.sh"
