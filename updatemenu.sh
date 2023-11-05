@@ -54,9 +54,7 @@ echo -e "     \e[$number [ x ]\e[m \e[$below Back To Menu\e[m"
 echo -e ""
 echo -e "   \e[$line--------------------------------------------------------\e[m"
 echo -e "\e[$line"
-read -p "Please Choose 1 or x : " option2
-case $option2 in
-1)
+
 version=$(cat /home/ver)
 new_version=$( curl https://raw.githubusercontent.com/${GitUser}/v4/main/newversion | grep $version )
 if [ $version = $new_version ]; then
@@ -194,7 +192,7 @@ clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/v5/main/version )
+ver=$( curl https://raw.githubusercontent.com/${GitUser}/v4/main/version )
 sleep 1
 echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
 echo ""
