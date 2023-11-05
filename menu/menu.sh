@@ -168,7 +168,7 @@ echo -e "${BIGreen}                       EXPIRED : $exp2 days"
 echo -e "${BIGreen}                       OWNER : $Name"
 echo -e "${BIYellow} └─────────────────────────────────────────────────────┘${NC}"
 echo -e ""
-read -p " select [ 1 / 9 ] ---   >>      "  opt
+read -p " select [ 1 / 10 ] ---   >>      "  opt
 echo -e   ""
 case $opt in
 1) clear ; menu-ssh ;;
