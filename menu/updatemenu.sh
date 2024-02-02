@@ -34,6 +34,8 @@ rm -rf menu-trgo
 rm -rf menu-trojan
 rm -rf menu-ssh
 rm -rf menu-backup
+rm -rf updatemenu
+wget -O updatemenu "https://raw.githubusercontent.com/maruX1922/v4/main/menu/updatemenu.sh"
 wget -O menu "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu.sh"
 wget -O menu-vmess "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu-vmess.sh"
 wget -O menu-vless "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu-vless.sh"
