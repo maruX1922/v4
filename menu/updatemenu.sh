@@ -1,5 +1,5 @@
 #!/bin/bash
-MYIP=$(curl -sS ipv4.icanhazip.com)
+MYIP=$(curl -sS ipv4.icanhazip.com);
 clear
 fun_bar() {
     CMD[0]="$1"
