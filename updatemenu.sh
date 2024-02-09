@@ -1,6 +1,40 @@
-#wget https://github.com/${GitUser}/
+#!/bin/bash
 GitUser="maruX1922"
-cd /usr/bin
+clear
+fun_bar() {
+    CMD[0]="$1"
+    CMD[1]="$2"
+    (
+        [[ -e $HOME/fim ]] && rm $HOME/fim
+        ${CMD[0]} -y >/dev/null 2>&1
+        ${CMD[1]} -y >/dev/null 2>&1
+        touch $HOME/fim
+    ) >/dev/null 2>&1 &
+    tput civis
+    echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
+    while true; do
+        for ((i = 0; i < 18; i++)); do
+            echo -ne "\033[0;32m#"
+            sleep 0.1s
+        done
+        [[ -e $HOME/fim ]] && rm $HOME/fim && break
+        echo -e "\033[0;33m]"
+        sleep 1s
+        tput cuu1
+        tput dl1
+        echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
+    done
+    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+    tput cnorm
+}
+res1() {
+    wget https://raw.githubusercontent.com/maruX1922/v4/main/updatemenu.sh
+    cd /usr/local/sbin  
+	#cd /usr/bin	
+    rm -rf updatemenu.sh
+    
+}
+
 # menu
 wget -q -O menu "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu.sh"
 wget -q -O menu-vmess "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu-vmess.sh"
@@ -9,6 +43,7 @@ wget -q -O running "https://raw.githubusercontent.com/maruX1922/v4/main/menu/run
 wget -q -O clearcache "https://raw.githubusercontent.com/maruX1922/v4/main/menu/clearcache.sh"
 wget -q -O menu-trgo "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu-trgo.sh"
 wget -q -O menu-trojan "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu-trojan.sh"
+
 
 # menu ssh ovpn
 wget -q -O menu-ssh "https://raw.githubusercontent.com/maruX1922/v4/main/menu/menu-ssh.sh"
@@ -94,4 +129,16 @@ chmod +x xp
 chmod +x acs-set
 chmod +x sshws
 clear
+
+netfilter-persistent
+clear
+echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
+echo -e " \e[1;97;101m            UPDATE SCRIPT               \e[0m"
+echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
+echo -e ""
+echo -e "  \033[1;91m Update Script Service\033[1;37m"
+fun_bar 'res1'
+echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
+echo -e ""
+read -n 1 -s -r -p "Press [ Enter ] to back on menu"
 menu
