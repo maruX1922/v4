@@ -1,5 +1,3 @@
-#!/bin/bash
-GitUser="maruX1922"
 clear
 fun_bar() {
     CMD[0]="$1"
